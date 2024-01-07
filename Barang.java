@@ -1,5 +1,5 @@
 import java.util.Date;
-
+ 
 public class Barang implements Displayable {
     private int id;
     private String name;

@@ -23,7 +23,7 @@ public class BarangManagement {
         while (true) {
             displayMenu();
             choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline not consumed by nextInt()
+            scanner.nextLine(); 
 
             try {
                 switch (choice) {
@@ -97,7 +97,7 @@ public class BarangManagement {
 
         System.out.print("Masukkan harga barang: ");
         double price = scanner.nextDouble();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         int id = dataBarang.size() + 1;
         Barang barang = new Barang(id, name, price, new Date());
@@ -111,14 +111,14 @@ public class BarangManagement {
     
         System.out.print("Masukkan harga barang elektronik: ");
         double price = scanner.nextDouble();
-        scanner.nextLine(); // Membersihkan newline
+        scanner.nextLine(); 
     
         System.out.print("Masukkan brand barang elektronik: ");
         String brand = scanner.nextLine();
     
         System.out.print("Masukkan konsumsi daya barang elektronik: ");
         double powerConsumption = scanner.nextDouble();
-        scanner.nextLine(); // Membersihkan newline
+        scanner.nextLine(); 
     
         int id = dataBarang.size() + 1;
         ElectronicBarang electronicBarang = new ElectronicBarang(id, name, price, new Date(), brand, powerConsumption);
@@ -141,7 +141,7 @@ public class BarangManagement {
     private static void readBarang(Scanner scanner) throws BarangNotFoundException {
         System.out.print("Masukkan ID barang yang ingin dibaca: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan newline
+        scanner.nextLine(); 
     
         if (dataBarang.containsKey(id)) {
             Barang barang = dataBarang.get(id);
@@ -154,7 +154,7 @@ public class BarangManagement {
     private static void updateBarang(Scanner scanner) throws BarangNotFoundException {
         System.out.print("Masukkan ID barang yang ingin diperbarui: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan newline
+        scanner.nextLine(); 
     
         if (dataBarang.containsKey(id)) {
             Barang barang = dataBarang.get(id);
@@ -182,13 +182,12 @@ public class BarangManagement {
     }
 
     private static void updateElectronicBarang(Scanner scanner, ElectronicBarang electronicBarang) {
-        updateRegularBarang(scanner, electronicBarang); // Panggil metode update kelas dasar
+        updateRegularBarang(scanner, electronicBarang); 
     
         System.out.print("Masukkan brand barang elektronik baru: ");
         String brand = scanner.nextLine();
         electronicBarang.setBrand(brand);
     
-        // Membersihkan newline yang tidak terbaca oleh nextDouble()
         scanner.nextLine();
     
         while (true) {
